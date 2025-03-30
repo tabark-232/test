@@ -7,6 +7,11 @@ Original file is located at
     https://colab.research.google.com/drive/12N9dXggp6lu2MDAdmjNRRqxwHryHBWyg
 """
 
+from gettext import install
+
+
+# Removed invalid pip command. Install TensorFlow via terminal if needed.
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -18,12 +23,13 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import make_pipeline
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, f1_score
 from gensim.models import Word2Vec
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Embedding, LSTM, Dense, Dropout, Bidirectional
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.callbacks import EarlyStopping
+from tensorflow.keras.preprocessing.text import text_to_word_sequence # type: ignore
+from tensorflow.keras.preprocessing.text import Tokenizer # type: ignore
+from tensorflow.keras.preprocessing.sequence import pad_sequences # type: ignore
+from tensorflow.keras.models import Sequential # type: ignore
+from tensorflow.keras.layers import Embedding, LSTM, Dense, Dropout, Bidirectional # type: ignore
+from tensorflow.keras.optimizers import Adam # type: ignore
+from tensorflow.keras.callbacks import EarlyStopping # type: ignore
 from sklearn.preprocessing import LabelEncoder
 from sklearn.cluster import KMeans
 from sklearn.decomposition import LatentDirichletAllocation as LDA
